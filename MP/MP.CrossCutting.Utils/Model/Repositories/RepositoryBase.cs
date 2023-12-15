@@ -9,10 +9,12 @@ namespace MP.CrossCutting.Utils.Model.Repositories
     public abstract class RepositoryBase<TEntity> : IRepository<TEntity> where TEntity : class, IIdentifiable
     {
         protected readonly DbContext _dbContext;
+        protected readonly DbSet<TEntity> _dbSet;
 
         protected RepositoryBase(DbContext dbContext)
         {
             _dbContext = dbContext;
+            _dbSet = _dbContext.Set<TEntity>();
         }
 
         public virtual async Task Insert(TEntity entity)
@@ -33,7 +35,7 @@ namespace MP.CrossCutting.Utils.Model.Repositories
             await _dbContext.SaveChangesAsync();
         }
 
-        public virtual async Task<TEntity?> GetById(Guid id, List<string>? navigationPropertyPaths = default)
+        public virtual async Task<TEntity?> GetById(decimal id, List<string>? navigationPropertyPaths = default)
         {
             if (navigationPropertyPaths is not null)
             {

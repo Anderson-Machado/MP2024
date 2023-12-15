@@ -12,14 +12,11 @@ namespace MP.CrossCutting.IoC
     {
         public static IServiceCollection AddApiConfigurationIoC(this IServiceCollection services)
         {
-            services.AddScoped<IExampleRepository, ExampleRepository>();
-            services.AddScoped<IExample2Repository, Example2Repository>();
+            services.AddScoped<IPessoaRepositories, PessoaRepository>();
 
-            services.AddScoped<IExample2DomainService, Example2DomainService>();
-            services.AddScoped<IExampleDomainService, ExampleDomainService>();
+            services.AddScoped<IPessoaDomainService, PessoaDomainService>();
 
-            services.AddScoped<IExample2Service, Example2Service>();
-            services.AddScoped<IExampleService, ExampleService>();
+            services.AddScoped<IPessoaService, PessoaService>();
 
             return services;
         }

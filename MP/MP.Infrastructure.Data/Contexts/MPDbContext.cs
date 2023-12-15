@@ -7,14 +7,14 @@ using System.Reflection;
 
 namespace MP.Infrastructure.Data.Contexts
 {
-    public class ExampleDbContext : DbContext
+    public class MPDbContext : DbContext
     {
         private readonly IHostEnvironment _environment;
-        private readonly ILogger<ExampleDbContext> _logger;
+        private readonly ILogger<MPDbContext> _logger;
 
-        public ExampleDbContext(DbContextOptions<ExampleDbContext> options,
+        public MPDbContext(DbContextOptions<MPDbContext> options,
                                          IHostEnvironment environment,
-                                         ILogger<ExampleDbContext> logger)
+                                         ILogger<MPDbContext> logger)
            : base(options)
         {
             _environment = environment;
@@ -43,7 +43,8 @@ namespace MP.Infrastructure.Data.Contexts
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<Example> Examples { get; set; } = null!;
-        public DbSet<Example2> Others { get; set; } = null!;
+        public DbSet<Pessoa> Pessoa { get; set; }
+        public DbSet<SituacaoPessoaMultipla> SituacaoPessoa { get; set; }
+
     }
 }

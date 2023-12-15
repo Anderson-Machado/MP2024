@@ -51,7 +51,7 @@ try
 
     builder.Services.AddAuthConfiguration();
 
-    builder.Services.AddDistributedCache(builder.Configuration, builder.Environment);
+    //builder.Services.AddDistributedCache(builder.Configuration, builder.Environment);
 
     var app = builder.Build();
 

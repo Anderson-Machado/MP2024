@@ -17,14 +17,15 @@ namespace MP.CrossCutting.Utils.Model.DomainServices
 
         public virtual async Task Create(TEntity entity) => await _repository.Insert(entity);
 
-        public virtual async Task<TEntity?> Get(Guid id) => await _repository.GetById(id);
+        public virtual async Task<TEntity?> Get(decimal id) => await _repository.GetById(id);
 
         public virtual async Task<TEntity?> Get(Expression<Func<TEntity, bool>> query) => await _repository.Get(query);
 
         public virtual async Task<IEnumerable<TEntity>> GetAll() => (await _repository.ListAll()).ToList();
 
-        public virtual async Task<TEntity?> Remove(Guid id)
+        public virtual async Task<TEntity?> Remove(decimal id)
         {
+
             TEntity? entity = await Get(id);
             if (entity is not null)
             {
