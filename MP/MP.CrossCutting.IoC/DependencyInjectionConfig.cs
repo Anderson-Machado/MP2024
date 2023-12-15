@@ -15,10 +15,12 @@ namespace MP.CrossCutting.IoC
             services.AddScoped<IPessoaRepositories, PessoaRepository>();
             services.AddScoped<IVisitaRepository, VisitaRepository>();
             services.AddScoped<IVisitanteRepository, VisitanteRepository>();
+            services.AddScoped<ILogAcessoRepository, LogAcessoRepository>();
 
 
             services.AddScoped<IPessoaDomainService, PessoaDomainService>();
             services.AddScoped<IVisitanteDomainService, VisitanteDomainService>();
+            services.AddScoped<ILogAcessoDomainService, LogAcessoDomainService>();
 
 
             services.AddScoped<IPessoaService, PessoaService>();

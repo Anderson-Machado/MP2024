@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using MP.Application.Models.App;
 using MP.Application.Models.Common;
 using MP.Application.Models.Visita;
 using MP.Application.Services.Interfaces;
@@ -17,14 +18,13 @@ namespace MP.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<ServiceResult<VisitanteModel>> GetVisitanteByMatricula(decimal codVisitante)
+        public async Task<ServiceResult<VisitanteModel>> GetVisitanteByMatricula(AppRequest app)
         {
-            var entity = await _domainService.GetVisitanteByMatricula(codVisitante);
+            var entity = await _domainService.GetVisitanteByMatricula(app.Matricula);
 
             var ret = _mapper.Map<VisitanteModel>(entity);
 
             return ServiceResult<VisitanteModel>.CreateSuccess(ret);
-
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MP.Api.Controllers.Common;
+using MP.Application.Models.App;
 using MP.Application.Models.Pessoa;
 using MP.Application.Services;
 using MP.Application.Services.Interfaces;
@@ -28,13 +29,13 @@ namespace MP.Api.Controllers
         /// </summary>
         /// <param name="matricula"></param>
         /// <returns></returns>
-        [HttpGet("{matricula}")]
+        [HttpPost("")]
         [ProducesResponseType(typeof(PessoaModel), Status200OK)]
         [ProducesResponseType(typeof(ProblemDetails), Status400BadRequest)]
         [ProducesResponseType(typeof(ProblemDetails), Status404NotFound)]
-        public async Task<IActionResult> Get([FromRoute] decimal matricula)
+        public async Task<IActionResult> Get( [FromBody] AppRequest app)
         {
-            var serviceResult = await _visitanteService.GetVisitanteByMatricula(matricula);
+            var serviceResult = await _visitanteService.GetVisitanteByMatricula(app);
 
             if (serviceResult.ResultType == Application.Models.Common.ServiceResultTypes.NotFound)
             {
