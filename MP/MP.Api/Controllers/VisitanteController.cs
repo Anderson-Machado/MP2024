@@ -37,9 +37,9 @@ namespace MP.Api.Controllers
         {
             var serviceResult = await _visitanteService.GetVisitanteByMatricula(app);
 
-            if (serviceResult.ResultType == Application.Models.Common.ServiceResultTypes.NotFound)
+            if (serviceResult.ResultType == Application.Models.Common.ServiceResultTypes.Error)
             {
-                return NotFoundResponse(Messages.NotFound);
+                return ErrorResponse(serviceResult.Notifications.Select(x => x.Message).First());
             }
 
             return SuccessResponse(serviceResult.Value, HttpStatusCode.OK);

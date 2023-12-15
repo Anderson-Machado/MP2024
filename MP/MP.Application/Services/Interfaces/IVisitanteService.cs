@@ -6,6 +6,6 @@ namespace MP.Application.Services.Interfaces
 {
     public interface IVisitanteService
     {
-        Task<ServiceResult<VisitanteModel>> GetVisitanteByMatricula(AppRequest app);
+        Task<ServiceResult<AppResponse>> GetVisitanteByMatricula(AppRequest app);
     }
 }

@@ -18,24 +18,24 @@ namespace MP.Core.Services
 
         public async Task<Visitante> GetVisitanteByMatricula(decimal codVisitante)
         {
-            var teste = await GetVisitaByMatricula(codVisitante);
-            if(teste is null)
+            var visita = await GetVisitaByMatricula(codVisitante);
+            if(visita is null)
             {
                return new Visitante();
             }
 
-            if(teste.DataBaixaCredencial is null)
+            if(visita.DataBaixaCredencial is null)
             {
-                var result = await _visitanteRepository.GetVisitanteByMatricula(teste.CodVisitante);
+                var result = await _visitanteRepository.GetVisitanteByMatricula(visita.CodVisitante);
                 result.Matricula = codVisitante.ToString();
-                result.Result = "LIBERADO";
-                result.VitaNumero = teste.Id;
-                result.VisiNumero = teste.CodVisitante;
+                result.Result = "LIBERADO!";
+                result.VitaNumero = visita.Id;
+                result.VisiNumero = visita.CodVisitante;
                 return result;
             }
 
 
-            return new Visitante();
+            return new Visitante() { Result = "RECUSADO!"};
         }
 
         private async Task<Visita> GetVisitaByMatricula(decimal matricula)
