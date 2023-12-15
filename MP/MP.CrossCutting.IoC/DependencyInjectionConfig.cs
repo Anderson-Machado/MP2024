@@ -13,10 +13,17 @@ namespace MP.CrossCutting.IoC
         public static IServiceCollection AddApiConfigurationIoC(this IServiceCollection services)
         {
             services.AddScoped<IPessoaRepositories, PessoaRepository>();
+            services.AddScoped<IVisitaRepository, VisitaRepository>();
+            services.AddScoped<IVisitanteRepository, VisitanteRepository>();
+
 
             services.AddScoped<IPessoaDomainService, PessoaDomainService>();
+            services.AddScoped<IVisitanteDomainService, VisitanteDomainService>();
+
 
             services.AddScoped<IPessoaService, PessoaService>();
+            services.AddScoped<IVisitanteService, VisitanteService>();
+
 
             return services;
         }
