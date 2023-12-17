@@ -85,8 +85,9 @@ namespace MP.Application.Services
                     await _logAcessoDomainService.Create(entityLogAcesso);
                     res.Imagem = entity.Imagem;
                     res.Message = "Liberado";
+                    res.Name = entity.NomePessoa;
+                    return ServiceResult<AppResponse>.CreateSuccess(res);
 
-                    
                 }
                else if (entity.CodSituacaoPessoa == 18 && entity.CodSituacaoPessoa == 23)
                 {
@@ -114,7 +115,10 @@ namespace MP.Application.Services
                         entityLogAcesso.Evento = 6;
                         entityLogAcesso.DefinirAreasComBaseNoSentidoConsulta();
                         await _logAcessoDomainService.Create(entityLogAcesso);
-                        return ServiceResult<AppResponse>.CreateWithError(app.Matricula.ToString(), "Funcionário bloqueado por validade!");
+                        res.Name = entity.NomePessoa;
+                        res.Message = "Funcionário bloqueado por validade!!";
+                        return ServiceResult<AppResponse>.CreateSuccess(res);
+                        
                     }
                     else
                     {
@@ -122,6 +126,7 @@ namespace MP.Application.Services
                         entityLogAcesso.DefinirAreasComBaseNoSentidoConsulta();
                         await _logAcessoDomainService.Create(entityLogAcesso);
                         res.Imagem = entity.Imagem;
+                        res.Name = entity.NomePessoa;
                         res.Message = "Liberado!";
                       return  ServiceResult<AppResponse>.CreateSuccess(res);
                     }
@@ -148,7 +153,9 @@ namespace MP.Application.Services
                     };
                     entityLogAcesso.DefinirAreasComBaseNoSentidoConsulta();
                     await _logAcessoDomainService.Create(entityLogAcesso);
-                    return ServiceResult<AppResponse>.CreateWithError(app.Matricula.ToString(), "Funcionário Bloqueado!");
+                    res.Name = entity.NomePessoa;
+                    res.Message = "Funcionário Bloqueado!";
+                    return ServiceResult<AppResponse>.CreateSuccess(res);
                 }
             }
             //rever o retorno de sucesso
