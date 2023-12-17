@@ -12,7 +12,10 @@ namespace MP.Core.Entities
         public string NomePessoa { get; set; } = string.Empty;
 
         public DateTime? DatePeriodoFinal { get; set; }
+        public byte[]? Imagem {  get; set; } 
         public virtual SituacaoPessoaMultipla SituacaoPessoa { get; set; }
+
+        public virtual FotoPessoa FotoPessoa { get; set; }
 
     }
 }

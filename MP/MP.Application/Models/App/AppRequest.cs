@@ -25,7 +25,7 @@ namespace MP.Application.Models.App
                     _areaDe = 1;
                     _areaPara = 2;
                 }
-                else if (_type == EType.Saida)
+                else if (_type == EType.Saída)
                 {
                     _sentido = 2;
                     _areaDe = 2;
@@ -60,6 +60,6 @@ namespace MP.Application.Models.App
     public enum EType
     {
         Entrada,
-        Saida
+        Saída
     }
 }

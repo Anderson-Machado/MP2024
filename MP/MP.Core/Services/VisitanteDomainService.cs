@@ -21,7 +21,7 @@ namespace MP.Core.Services
             var visita = await GetVisitaByMatricula(codVisitante);
             if(visita is null)
             {
-               return new Visitante();
+               return null;
             }
 
             if(visita.DataBaixaCredencial is null)

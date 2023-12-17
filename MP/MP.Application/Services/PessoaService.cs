@@ -23,7 +23,8 @@ namespace MP.Application.Services
 
         public async Task<ServiceResult<AppResponse>> GetPessoaByMatricula(AppRequest app)
         {
-            var dataAtual = DateTime.Now.ToString("dd-MM-yyyy HH:mm"); // rever de levar este carinha para o body
+            var dataAtualDT = DateTime.Now;
+            var dataAtual = dataAtualDT.ToString("dd-MM-yyyy HH:mm"); // rever de levar este carinha para o body
 
             var data = dataAtual.Remove(10).Replace("-", "");
             var hora = dataAtual.Substring(10).Replace(" ", "").Replace(":","");
@@ -41,7 +42,7 @@ namespace MP.Application.Services
                     Matricula = app.Matricula,
                     Credencial = app.Matricula,
                     Equipamento = app.Equipamento,
-                    DataRequisicao = DateTime.Parse(dataAtual),
+                    DataRequisicao = dataAtualDT,
                     SendidoConsulta = app.Sentido,
                     Evento = 9,
                     CodAreaOrigem = app.AreaDe,
@@ -49,7 +50,7 @@ namespace MP.Application.Services
                     CodVisitante = 0,
                     Funcao = 0,
                     CodGrupo = 3,
-                    DataPersistencia = DateTime.Parse(dataAtual),
+                    DataPersistencia = dataAtualDT,
                     NuDataRequisicao = int.Parse(data),
                     NuHoraRequisicao = int.Parse(hora),
                     Nome = ""
@@ -67,7 +68,7 @@ namespace MP.Application.Services
                         Matricula = app.Matricula,
                         Credencial = app.Matricula,
                         Equipamento = app.Equipamento,
-                        DataRequisicao = DateTime.Parse(dataAtual),
+                        DataRequisicao = dataAtualDT,
                         SendidoConsulta = app.Sentido,
                         Evento = 10,
                         CodAreaOrigem = app.AreaDe,
@@ -75,14 +76,17 @@ namespace MP.Application.Services
                         CodVisitante = 0,
                         Funcao = 0,
                         CodGrupo = 3,
-                        DataPersistencia = DateTime.Parse(dataAtual),
+                        DataPersistencia = dataAtualDT,
                         NuDataRequisicao = int.Parse(data),
                         NuHoraRequisicao = int.Parse(hora),
                         Nome = entity.NomePessoa
                     };
                     entityLogAcesso.DefinirAreasComBaseNoSentidoConsulta();
                     await _logAcessoDomainService.Create(entityLogAcesso);
+                    res.Imagem = entity.Imagem;
                     res.Message = "Liberado";
+
+                    
                 }
                else if (entity.CodSituacaoPessoa == 18 && entity.CodSituacaoPessoa == 23)
                 {
@@ -91,7 +95,7 @@ namespace MP.Application.Services
                         Matricula = app.Matricula,
                         Credencial = app.Matricula,
                         Equipamento = app.Equipamento,
-                        DataRequisicao = DateTime.Parse(dataAtual),
+                        DataRequisicao = dataAtualDT,
                         SendidoConsulta = app.Sentido,
                         Evento = 0,
                         CodAreaOrigem = app.AreaDe,
@@ -99,10 +103,11 @@ namespace MP.Application.Services
                         CodVisitante = 0,
                         Funcao = 0,
                         CodGrupo = 3,
-                        DataPersistencia = DateTime.Parse(dataAtual),
+                        DataPersistencia = dataAtualDT,
                         NuDataRequisicao = int.Parse(data),
                         NuHoraRequisicao = int.Parse(hora),
-                        Nome = entity.NomePessoa
+                        Nome = entity.NomePessoa,
+
                     };
                     if (!dto.HasValidAccess)
                     {
@@ -116,6 +121,7 @@ namespace MP.Application.Services
                         entityLogAcesso.Evento = 10;
                         entityLogAcesso.DefinirAreasComBaseNoSentidoConsulta();
                         await _logAcessoDomainService.Create(entityLogAcesso);
+                        res.Imagem = entity.Imagem;
                         res.Message = "Liberado!";
                       return  ServiceResult<AppResponse>.CreateSuccess(res);
                     }
@@ -127,7 +133,7 @@ namespace MP.Application.Services
                         Matricula = app.Matricula,
                         Credencial = app.Matricula,
                         Equipamento = app.Equipamento,
-                        DataRequisicao = DateTime.Parse(dataAtual),
+                        DataRequisicao = dataAtualDT,
                         SendidoConsulta = app.Sentido,
                         Evento = 10,
                         CodAreaOrigem = app.AreaDe,
@@ -135,7 +141,7 @@ namespace MP.Application.Services
                         CodVisitante = 0,
                         Funcao = 0,
                         CodGrupo = 3,
-                        DataPersistencia = DateTime.Parse(dataAtual),
+                        DataPersistencia = dataAtualDT,
                         NuDataRequisicao = int.Parse(data),
                         NuHoraRequisicao = int.Parse(hora),
                         Nome = entity.NomePessoa,

@@ -31,7 +31,7 @@ namespace MP.Application.Services
             var res = new AppResponse();
             if (entity is null)
             {
-                return ServiceResult<AppResponse>.CreateWithError(app.Matricula.ToString(), "Credencial não de visitante não cadastrada.");
+                return ServiceResult<AppResponse>.CreateWithError(app.Matricula.ToString(), "Credencial de visitante não cadastrada.");
             }
             if(entity.Result == "RECUSADO!")
             {

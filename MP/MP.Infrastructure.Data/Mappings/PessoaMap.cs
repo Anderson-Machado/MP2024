@@ -9,7 +9,7 @@ namespace MP.Infrastructure.Data.Mappings
         public void Configure(EntityTypeBuilder<Pessoa> builder)
         {
             builder.ToTable("PESSOA");
-
+            builder.HasOne(p => p.FotoPessoa).WithOne().HasForeignKey<FotoPessoa>(f => f.Id);
             builder.HasKey(c => c.Id);
             builder.Property(c => c.Id)
                 .HasColumnName("CD_PESSOA");
@@ -24,10 +24,12 @@ namespace MP.Infrastructure.Data.Mappings
             builder.Property(c => c.NomePessoa)
     .HasColumnName("NM_PESSOA");
 
+            
 
             builder.Ignore(c => c.Notifications);
             builder.Ignore(c => c.IsValid);
             builder.Ignore(c => c.SituacaoPessoa);
+            builder.Ignore(c => c.FotoPessoa);
         }
 
     }
