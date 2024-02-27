@@ -33,6 +33,11 @@ namespace MP.Application.Models.Common
             return new ServiceResult<T>(ServiceResultTypes.NotFound);
         }
 
+        public static ServiceResult<T> CreateNoContent()
+        {
+            return new ServiceResult<T>(ServiceResultTypes.NoContent);
+        }
+
         public static ServiceResult<T> CreateUnprocessable()
         {
             return new ServiceResult<T>(ServiceResultTypes.Unprocessable);
@@ -69,6 +74,7 @@ namespace MP.Application.Models.Common
         Success,
         Error,
         NotFound,
-        Unprocessable
+        Unprocessable,
+        NoContent
     }
 }

@@ -7,5 +7,7 @@ namespace MP.Application.Services.Interfaces
     public interface IPessoaService
     {
         Task<ServiceResult<AppResponse>> GetPessoaByMatricula(AppRequest app);
+
+        Task<ServiceResult<AppResponse>> BatchOffLine(IEnumerable<AppRequest> app);
     }
 }

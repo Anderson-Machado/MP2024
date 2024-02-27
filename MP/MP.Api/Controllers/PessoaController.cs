@@ -45,5 +45,26 @@ namespace MP.Api.Controllers
             return SuccessResponse(serviceResult.Value, HttpStatusCode.OK);
         }
 
+        /// <summary>
+        /// Get a example2 by example2Id.
+        /// </summary>
+        /// <param name="matricula"></param>
+        /// <returns></returns>
+        [HttpPost("/bacth")]
+        [ProducesResponseType(typeof(PessoaModel), Status200OK)]
+        [ProducesResponseType(typeof(ProblemDetails), Status400BadRequest)]
+        [ProducesResponseType(typeof(ProblemDetails), Status404NotFound)]
+        public async Task<IActionResult> Post([FromBody] IEnumerable<AppRequest> app)
+        {
+            var serviceResult = await _pessoaService.BatchOffLine(app);
+
+            if (serviceResult.ResultType == Application.Models.Common.ServiceResultTypes.Error)
+            {
+                return ErrorResponse(serviceResult.Notifications.Select(x => x.Message).First());
+            }
+
+            return SuccessResponse(serviceResult.Value, HttpStatusCode.OK);
+        }
+
     }
 }

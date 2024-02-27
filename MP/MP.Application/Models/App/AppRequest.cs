@@ -34,6 +34,7 @@ namespace MP.Application.Models.App
             }
         }
 
+        public DateTime Date { get; set; }
        
         public int Equipamento { get; set; }
         public decimal Matricula { get; set; }

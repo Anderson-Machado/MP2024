@@ -8,5 +8,6 @@ namespace MP.Core.Interfaces.Repositories
     public interface ILogAcessoRepository: IRepository<LogAcesso>, IRepositorySearch<LogAcesso>
     {
         Task Create(LogAcesso entity);
+        Task CreateMany(IEnumerable<LogAcesso> entity);
     }
 }

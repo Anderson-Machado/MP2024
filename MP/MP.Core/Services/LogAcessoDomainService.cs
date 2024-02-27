@@ -17,5 +17,10 @@ namespace MP.Core.Services
         {
             await _logAcessoRepository.Create(entity);
         }
+
+        public async Task CreateMany(IEnumerable<LogAcesso> entity)
+        {
+            await _logAcessoRepository.CreateMany(entity);
+        }
     }
 }

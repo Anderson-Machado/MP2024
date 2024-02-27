@@ -23,7 +23,7 @@ namespace MP.Application.Services
 
         public async Task<ServiceResult<AppResponse>> GetVisitanteByMatricula(AppRequest app)
         {
-            var dataAtual = DateTime.Now.ToString("dd-MM-yyyy HH:mm"); // rever de levar este carinha para o body
+            var dataAtual = DateTime.Now.ToString("dd-MM-yyyy HH:mm");
 
             var data = dataAtual.Remove(10).Replace("-", "");
             var hora = dataAtual.Substring(10).Replace(" ", "").Replace(":", "");

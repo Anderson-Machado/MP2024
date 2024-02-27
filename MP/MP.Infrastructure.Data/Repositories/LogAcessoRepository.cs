@@ -20,7 +20,13 @@ namespace MP.Infrastructure.Data.Repositories
 
         public async Task Create(LogAcesso entity)
         {
-           await _dbContext.Set<LogAcesso>().AddAsync(entity);
+         await _dbContext.Set<LogAcesso>().AddAsync(entity);
+            _dbContext.SaveChanges();
+        }
+
+        public async Task CreateMany(IEnumerable<LogAcesso> entity)
+        {
+            await _dbContext.Set<LogAcesso>().AddRangeAsync(entity);
             _dbContext.SaveChanges();
         }
     }
