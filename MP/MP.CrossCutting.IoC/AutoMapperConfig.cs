@@ -13,7 +13,7 @@ namespace MP.CrossCutting.IoC
             services.AddAutoMapper(cfg => cfg.ShouldUseConstructor = ci => !ci.IsPrivate,
                                           typeof(EntityToModelProfile),
                                           typeof(ModelToEntityProfile),
-                                          typeof(OtherIdResolver<,>));
+                                          typeof(HasValidAccessResolver));
 
             return services;
         }

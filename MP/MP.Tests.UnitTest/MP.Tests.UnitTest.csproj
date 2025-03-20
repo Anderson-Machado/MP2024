@@ -30,8 +30,8 @@
   </ItemGroup>
 
   <ItemGroup>
-	<ProjectReference Include="..\..\src\MP.Application\MP.Application.csproj" />
-    <ProjectReference Include="..\..\src\MP.Core\MP.Core.csproj" />
+    <ProjectReference Include="..\MP.Application\MP.Application.csproj" />
+    <ProjectReference Include="..\MP.Core\MP.Core.csproj" />
   </ItemGroup>
 
 </Project>

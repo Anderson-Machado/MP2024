@@ -10,7 +10,7 @@ namespace MP.CrossCutting.IoC
     {
         public static void AddBDConfiguration(this IServiceCollection services, IConfiguration cfg)
         {
-            services.AddDbContext<ExampleDbContext>(options =>
+            services.AddDbContext<MPDbContext>(options =>
             {
                 options
                     .UseSqlServer(cfg.GetConnectionString("DbConnection"))

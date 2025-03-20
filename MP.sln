@@ -5,23 +5,23 @@ VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{0E54200D-50A7-4E88-AEB6-6D964131B169}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MP.CrossCutting.IoC", "MP\MP.CrossCutting.IoC\MP.CrossCutting.IoC.csproj", "{50819322-5C24-4A18-8252-CFC4C5A1AF17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MP.CrossCutting.IoC", "MP\MP.CrossCutting.IoC\MP.CrossCutting.IoC.csproj", "{50819322-5C24-4A18-8252-CFC4C5A1AF17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MP.CrossCutting.Utils", "MP\MP.CrossCutting.Utils\MP.CrossCutting.Utils.csproj", "{52E0D13A-B14E-418C-9E40-3C08BF1B2911}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MP.CrossCutting.Utils", "MP\MP.CrossCutting.Utils\MP.CrossCutting.Utils.csproj", "{52E0D13A-B14E-418C-9E40-3C08BF1B2911}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{1DAB4D8B-E3A6-4033-9B79-8FF61C9A1E7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MP.Infrastructure.Data", "MP\MP.Infrastructure.Data\MP.Infrastructure.Data.csproj", "{33C6E189-FDEF-4B74-8245-5E7CC72C4FF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MP.Infrastructure.Data", "MP\MP.Infrastructure.Data\MP.Infrastructure.Data.csproj", "{33C6E189-FDEF-4B74-8245-5E7CC72C4FF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MP.Api", "MP\MP.Api\MP.Api.csproj", "{7B395AB6-A5D1-490E-B050-4BE35EB961F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MP.Api", "MP\MP.Api\MP.Api.csproj", "{7B395AB6-A5D1-490E-B050-4BE35EB961F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MP.Application", "MP\MP.Application\MP.Application.csproj", "{C534BC9A-E208-44D0-83E2-20A937FBEA73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MP.Application", "MP\MP.Application\MP.Application.csproj", "{C534BC9A-E208-44D0-83E2-20A937FBEA73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MP.Core", "MP\MP.Core\MP.Core.csproj", "{1665030A-F05F-4B47-B92A-FACD385C7AB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MP.Core", "MP\MP.Core\MP.Core.csproj", "{1665030A-F05F-4B47-B92A-FACD385C7AB5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{26F0E8B6-310B-44DE-89B4-377F1462905B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MP.Tests.UnitTest", "MP\MP.Tests.UnitTest\MP.Tests.UnitTest.csproj", "{728622B8-83ED-4884-B82E-FD217C3F66F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MP.Tests.UnitTest", "MP\MP.Tests.UnitTest\MP.Tests.UnitTest.csproj", "{728622B8-83ED-4884-B82E-FD217C3F66F0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MP.CrossCutting.ProblemDetail", "MP\MP.ProblemDetail\MP.CrossCutting.ProblemDetail.csproj", "{FFE216C3-F8CD-4117-B3B3-D8F75E78D550}"
 EndProject

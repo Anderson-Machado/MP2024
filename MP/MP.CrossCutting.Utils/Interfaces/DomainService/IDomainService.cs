@@ -7,8 +7,8 @@ namespace MP.CrossCutting.Utils.Interfaces.DomainService
     {
         Task Create(TEntity entity);
         Task Update(TEntity entity);
-        Task<TEntity?> Remove(Guid id);
-        Task<TEntity?> Get(Guid id);
+        Task<TEntity?> Remove(decimal id);
+        Task<TEntity?> Get(decimal id);
         Task<TEntity?> Get(Expression<Func<TEntity, bool>> query);
         Task<IEnumerable<TEntity>> GetAll();
     }

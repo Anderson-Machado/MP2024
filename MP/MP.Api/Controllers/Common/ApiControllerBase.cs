@@ -31,6 +31,12 @@ namespace MP.Api.Controllers.Common
             return new JsonResult(CreateProblemDetails(notifications));
         }
 
+        protected IActionResult ErrorResponse(string message)
+        {
+            Response.StatusCode = (int)HttpStatusCode.BadRequest;
+            return new JsonResult(CreateProblemDetails(HttpStatusCode.BadRequest,message));
+        }
+
         protected IActionResult NotFoundResponse(string message)
         {
             Response.StatusCode = (int)HttpStatusCode.NotFound;

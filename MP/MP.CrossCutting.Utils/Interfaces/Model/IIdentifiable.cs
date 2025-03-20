@@ -2,6 +2,6 @@
 {
     public interface IIdentifiable
     {
-        Guid? Id { get; }
+        decimal Id { get; }
     }
 }
